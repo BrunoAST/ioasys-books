@@ -1,0 +1,26 @@
+@import '../../../styles/abstract/breakpoint';
+
+.container-login {
+    position: relative;
+    height: 100%;
+    background-image: url('../../../assets/login-bg.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+
+    @include media-breakpoint('xs') {
+        background-position: 40% center;
+    }
+}
+
+.content {
+    @include media-breakpoint('xs') {
+        width: 100%;
+    }
+}
+
+.content form {
+    margin-top: 3.57rem;
+}

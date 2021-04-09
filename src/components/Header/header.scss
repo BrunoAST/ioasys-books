@@ -1,0 +1,23 @@
+@import '../../styles/abstract/breakpoint';
+
+.nav-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.user-welcome span {
+    font-weight: bold;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 1.15rem;
+}
+
+@include media-breakpoint('xs') {
+    .user-welcome span, .user-welcome {
+        display: none;
+    }
+}

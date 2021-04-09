@@ -1,0 +1,42 @@
+@import './colors';
+@import './breakpoint';
+
+.primary-bg {
+    background-color: $primary;
+}
+
+.primary-fg {
+    color: $primary;
+}
+
+.white-bg {
+    background-color: $white;
+}
+
+.white-fg {
+    color: $white;
+}
+
+.text-primary-bg {
+    background-color: $text-primary;
+}
+
+.text-primary-fg {
+    color: $text-primary;
+}
+
+.text-secondary-bg {
+    background-color: $text-secondary;
+}
+
+.text-secondary-fg {
+    color: $text-secondary;
+}
+
+.default-container-with {
+    padding: 0 8rem;
+
+    @include media-breakpoint('xs') {
+        padding: 0 1.15rem;
+    }
+}

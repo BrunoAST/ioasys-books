@@ -1,0 +1,84 @@
+@import '../../styles/abstract/breakpoint';
+
+.label-float {
+    position: relative;
+}
+
+.label-float input, .label-float label {
+    padding: 0 1.5rem;
+}
+
+.label-float input {
+    border: 0;
+    background-color: rgba(0, 0, 0, 0.32);
+    outline: none;
+    height: 4.3rem;
+    padding-top: 1.5rem;
+    font-size: 1.15rem;
+    width: 26.30rem;
+    transition: all 300ms ease-out;
+    border-radius: 4px;
+
+    @include media-breakpoint('xs') {
+        width: 100%;
+    }
+}
+
+.label-float input::placeholder {
+    color: transparent;
+}
+
+.label-float label {
+    opacity: .5;
+    pointer-events: none;
+    position: absolute;
+    padding-left: 1.5rem;
+    top: 8px;
+    left: 0;
+    transition: all 300ms ease-out;
+}
+
+.label-float input:required:invalid + label {
+    color: red;
+}
+
+.label-float input:required:invalid + label::before {
+    content: '*';
+}
+
+.label-float input:focus + label, .label-float input:not(:placeholder-shown) + label {
+    margin-top: 0;
+}
+
+.button-wrapper {
+    position: absolute;
+    right: 12px;
+    top: 20%;
+}
+
+.tooltip .tooltiptext {
+    margin-top: 24px;
+    background: rgba(255, 255, 255, 0.4);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 4px;
+    padding: 16px;
+    position: absolute;
+}
+
+.tooltiptext:before,
+.tooltiptext:after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 19px;
+    border-bottom-color: rgba(255, 255, 255, 0.4);
+}
+
+.tooltiptext:after {
+    left: 20px;
+    border: 10px solid transparent;
+    border-bottom-color: rgba(255, 255, 255, 0.4);
+}

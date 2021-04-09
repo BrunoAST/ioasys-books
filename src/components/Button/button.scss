@@ -1,0 +1,22 @@
+@import '../../styles/abstract/colors';
+
+button {
+    outline: none;
+}
+
+.text {
+    border: none;
+    padding: 8px 20px;
+    border-radius: 44px;
+    font-size: 1.15rem;
+    color: $primary;
+}
+
+.icon {
+    border: 1px solid rgba(51, 51, 51, 0.2);
+    border-radius: 50%;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    background-color: $white;
+}
