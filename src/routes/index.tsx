@@ -9,7 +9,7 @@ import Login from '../pages/Login';
 export default function Routes() {
     return (
         <Switch>
-            <Route path={ROUTES.LOGIN} component={Login} />
+            <Route path={ROUTES.LOGIN} exact component={Login} />
             <Route path={ROUTES.HOME} exact component={Home} isPrivate />
         </Switch>
     );

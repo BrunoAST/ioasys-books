@@ -1,5 +1,4 @@
 import produce from 'immer';
-import User from '../../../shared/models/User';
 import { ActionsType } from '../models/actionsType';
 
 const INITIAL_STATE = {

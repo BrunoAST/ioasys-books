@@ -5,7 +5,8 @@ export class ButtonModel {
     constructor(
         public styleType: StyleTypes,
         public type: Types,
+        public click?: () => void,
         public title?: string,
-        public icon?: string,
+        public disabled?: boolean
     ) { }
 }

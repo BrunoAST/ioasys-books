@@ -4,6 +4,11 @@ button {
     outline: none;
 }
 
+button:disabled {
+    color: $text-secondary;
+    cursor: default;
+}
+
 .text {
     border: none;
     padding: 8px 20px;
@@ -18,5 +23,6 @@ button {
     padding: 8px;
     display: flex;
     justify-content: center;
-    background-color: $white;
+    background-color: transparent;
+    color: $text-primary;
 }

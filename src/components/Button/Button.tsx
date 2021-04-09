@@ -4,13 +4,13 @@ import { ButtonModel } from './models/ButtonModel';
 
 import './button.scss';
 
-const Button: React.FC<ButtonModel> = ({ styleType, type, title, icon }) => {
+const Button: React.FC<ButtonModel> = ({ styleType, type, title, disabled = false, click, children }) => {
     return (
-        <button className={styleType} type={ type }>
+        <button className={styleType} type={type} onClick={() => click ? click() : null} disabled={disabled}>
             {
-                styleType === 'icon' ? <img className="image" src={icon} alt="Ícone" width="20" /> : null
+                children
             }
-            { styleType === 'text' ? title : null }
+            { styleType === 'text' ? title : null}
         </button>
     );
 }

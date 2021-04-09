@@ -4,7 +4,7 @@ import './header.scss';
 
 import Button from '../Button/Button';
 import Logo from '../Logo/Logo';
-import logOut from '../../assets/Log-Out.svg';
+import { FiLogOut } from 'react-icons/fi';
 import { removeToken } from '../../store/modules/auth/actions';
 import { removeUser } from '../../store/modules/user/actions';
 import { connect } from 'react-redux';
@@ -36,7 +36,9 @@ class Header extends Component {
                             Bem vindo, <span>{this.getUserName()}!</span>
                         </li>
                         <li onClick={this.logout}>
-                            <Button type="button" styleType="icon" icon={logOut} />
+                            <Button type="button" styleType="icon">
+                                <FiLogOut />
+                            </Button>
                         </li>
                     </ul>
                 </nav>

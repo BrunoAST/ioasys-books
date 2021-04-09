@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 
 import './login.scss';
 
@@ -11,7 +12,7 @@ import User from '../../shared/models/User';
 import history from '../../services/history';
 import ROUTES from '../../routes/RouterName';
 import { addUser } from '../../store/modules/user/actions';
-import { addToken, removeToken } from '../../store/modules/auth/actions';
+import { addToken } from '../../store/modules/auth/actions';
 
 const Login: React.FC<{ dispatch: any }> = (props) => {
     const [errorMessage, setErrorMessage] = useState('');
@@ -51,4 +52,4 @@ const Login: React.FC<{ dispatch: any }> = (props) => {
     );
 }
 
-export default connect()(Login);
+export default withRouter(connect()(Login));

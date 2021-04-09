@@ -1,0 +1,25 @@
+@import '../../styles/abstract/breakpoint';
+
+.paginator-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 24px;
+}
+
+.paginator-container .counter {
+    font-size: 12px;
+    font-weight: 400;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.paginator-container .counter .pagintaion-actions {
+    margin-left: 16px;
+    display: flex;
+    gap: 8px;
+}
+
+.paginator-container .counter span {
+    font-weight: bold;
+}
