@@ -7,6 +7,7 @@ export class ButtonModel {
         public type: Types,
         public click?: () => void,
         public title?: string,
-        public disabled?: boolean
+        public disabled?: boolean,
+        public style?: any,
     ) { }
 }

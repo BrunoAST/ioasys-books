@@ -6,6 +6,7 @@ import { BookModel } from './models/BookModel';
 import { BookPaginated } from './models/BookPaginated';
 import BooksListHttp from './services/BooksList';
 import Paginator from '../Paginator/Paginator';
+import Modal from '../ModalBook/ModalBook';
 
 export default class BooksList extends Component {
     state = {
@@ -13,7 +14,9 @@ export default class BooksList extends Component {
         page: 0,
         isSearching: true,
         totalItems: 0,
-        totalPages: 0
+        totalPages: 0,
+        isModalVisible: false,
+        book: {} as BookModel
     }
 
     componentDidMount() {
@@ -37,14 +40,28 @@ export default class BooksList extends Component {
         });
     }
 
+    async openModal(bookId: string) {
+        await BooksListHttp.getBookById(bookId)
+            .then(res => {
+                this.setState({ book: res.data });
+                this.setState({ isModalVisible: true });
+            });
+    }
+
     render() {
         return (
             <div className="container-list">
+                <Modal
+                    onClose={() => this.setState({ isModalVisible: false })}
+                    book={this.state.book}
+                    show={this.state.isModalVisible}
+                />
+                
                 <ul className="list">
                     <Loader show={this.state.isSearching} />
 
                     {this.state.books.map((book: BookModel) =>
-                        <li className="item-container" key={book.id}>
+                        <li onClick={() => this.openModal(book.id)} className="item-container" key={book.id}>
                             <img src={book.imageUrl} alt={book.title} height="120" />
 
                             <div className="book-info">

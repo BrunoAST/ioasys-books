@@ -4,12 +4,16 @@ import { ButtonModel } from './models/ButtonModel';
 
 import './button.scss';
 
-const Button: React.FC<ButtonModel> = ({ styleType, type, title, disabled = false, click, children }) => {
+const Button: React.FC<ButtonModel> = ({ styleType, type, title, disabled = false, click, children, style }) => {
     return (
-        <button className={styleType} type={type} onClick={() => click ? click() : null} disabled={disabled}>
-            {
-                children
-            }
+        <button
+            style={style ? style : null}
+            className={styleType}
+            type={type}
+            onClick={() => click ? click() : null}
+            disabled={disabled}
+        >
+            { children }
             { styleType === 'text' ? title : null}
         </button>
     );
