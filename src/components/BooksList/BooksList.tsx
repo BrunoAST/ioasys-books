@@ -57,9 +57,9 @@ export default class BooksList extends Component {
                     show={this.state.isModalVisible}
                 />
                 
+                <Loader show={this.state.isSearching && this.state.books.length === 0} />
+                
                 <ul className="list">
-                    <Loader show={this.state.isSearching} />
-
                     {this.state.books.map((book: BookModel) =>
                         <li onClick={() => this.openModal(book.id)} className="item-container" key={book.id}>
                             <img src={book.imageUrl} alt={book.title} height="120" />
